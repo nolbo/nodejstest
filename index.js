@@ -13,14 +13,24 @@ try {
         let cmd = msg.content.split(' ')[0];
         let val = msg.content.replace(`${cmd} `, '');
 
-        if(power === false && msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && msg.content === ';power') {
-            power = true;
-            msg.channel.send('`On: Power`');
+        if(msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && msg.content === ';power') {
+            if(power === false) {
+                power = true;
+                msg.channel.send('`On: Power`');
+            } else {
+                power = false;
+                msg.channel.send('`Off: Power`');
+            }
         }
 
-        else if(power === false && msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && msg.content === ';runtime') {
-            runtime = true;
-            msg.channel.send('`On: Runtime`');
+        else if(msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && msg.content === ';runtime') {
+            if(runtime === false) {
+                runtime = true;
+                msg.channel.send('`On: Runtime`');
+            } else {
+                runtime = false;
+                msg.channel.send('`Off: Runtime`');
+            }
         }
 
         else if(power === true && msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && cmd === ';;') {
