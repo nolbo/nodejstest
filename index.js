@@ -21,6 +21,4 @@ client.on('message', msg => {
     }
 });
 
-(async () => {
-    client.login(process.env.TOKEN);
-});
+client.login(process.env.TOKEN);
