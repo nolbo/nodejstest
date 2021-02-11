@@ -27,5 +27,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm start
       env:
-        CI: true
         TOEKN: ${{ secrets.TOKEN }}
