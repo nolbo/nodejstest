@@ -21,13 +21,13 @@ try {
             try {
                 msg.channel.send("```JavaScript\n" + eval(val) + "```");
             } catch(e) {
-                msg.channel.send(String(e));
+                msg.channel.send("```\n" + String(e) + "```");
             }
         }
     });
 } catch(e) {
     client.on('message', msg => {
-        msg.channel.send(String(e));
+        msg.channel.send("```\n" + String(e) + "```");
         power = false;
     });
 }
