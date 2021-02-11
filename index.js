@@ -12,7 +12,7 @@ try {
         let cmd = msg.content.split(' ')[0];
         let val = msg.content.replace(`${cmd} `, '');
 
-        if(msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && cmd === 'on') {
+        if(power === false && msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && msg.content === 'on') {
             power = true;
             msg.channel.send('`On`');
         }
@@ -26,7 +26,7 @@ try {
         }
     });
 } catch(e) {
-    client.on('messgae', msg => {
+    client.on('message', msg => {
         msg.channel.send(e);
         power = false;
     });
