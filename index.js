@@ -13,7 +13,7 @@ client.on('message', msg => {
         let val = msg.content.replace(`${cmd} `, '');
 
         if(power === true && msg.author.tag !== 'Vson#9403' && msg.author.tag === 'nolbo#4403' && cmd === ';;'){
-            msg.channel.send(eval(val));
+            msg.channel.send("```JavaScript\n" + eval(val) + "```");
         }
     } catch(e) {
         msg.channel.send(e);
