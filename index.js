@@ -37,7 +37,9 @@ try {
             try {
                 let start = new Date().getTime();
                 msg.channel.send("```JavaScript\n" + eval(val) + "```");
-                if(runtime === true) msg.channel.send('`Runtime: ' + new Date().getTime() - start + 'ms`');
+                let end = new Date().getTime();
+                let rt  = end - start;
+                if(runtime === true) msg.channel.send('`Runtime: ' + String(rt) + 'ms`');
             } catch(e) {
                 msg.channel.send("```\n" + String(e) + "```");
             }
