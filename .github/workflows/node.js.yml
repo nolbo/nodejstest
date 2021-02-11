@@ -25,6 +25,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm ci
     - run: npm start
       env:
+        CI: true
         TOEKN: ${{ secrets.TOKEN }}
